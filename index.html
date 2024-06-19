@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .about_slider {
+        width: 100%; 
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row-reverse;
+      /*width: 900px;*/
+      height: 85vh!important;
+      position: relative;
+      font-family: "Inter", sans-serif;
+    }
+    .about_slider .swiper-wrapper{
+        width: 65%!important;
+    }
+    .swiper-free-mode>.swiper-wrapper {
+    margin: 0!important;
+    }
+    .cal.swiper-pagination-bullets,
+    .swiper-vertical > .swiper-pagination-bullets {
+        position: relative;
+      background-color: #cbd5e1;
+      margin-right: 190px!important;
+      width: 2px;
+      height: fit-content;
+      right: var(--swiper-pagination-right, auto);
+      left: var(--swiper-pagination-left, auto);
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      margin-left: 80px;
+      gap: 60px;
+      z-index: 0;
+    }
+    .swiper-slide{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 8px;
+        height: auto !important;
+    }
+    .swiper-slide div {
+        width: 400px;
+      padding: 24px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      margin: 24px 0;
+      box-shadow: 0px 1px 2px 0px #0000000d;
+      opacity: 30%;
+    }
+    .swiper-slide h2 {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 600;
+    }
+    .swiper-slide p {
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+    .swiper-slide div {
+      padding: 14px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 10px;
+    }
+    .swiper-slide-active div{
+      opacity: 1;
+    }
+    .swiper-slide-next {
+        top: 0!important;
+    }
+    .swiper-vertical > .swiper-wrapper {
+      align-items: center;
+    }
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      margin: 0 !important;
+      background-color: #cbd5e1;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet p {
+      opacity: 0.2;
+    }
+    .slideNum {
+      position: absolute;
+      top: -5px;
+      left: -50px;
+    }
+    .swiper-pagination-bullet-active {
+      font-weight: 600;
+      width: 15px!important;
+      height: 15px!important;
+      border: 4px solid blue;
+      background-color: white;
+    }
+    .swiper-pagination-bullet-active p {
+      opacity: 1;
+    }
+    .rotate-circle {
+      width: 177px;
+      position: absolute;
+      top: calc(1% - 25px);
+      right: 0;
+      animation: rotation 5s infinite linear;
+    }
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .about_slider .swiper-slide img{
+        display: none;
+    }
+    .about_slider p{
+        margin-bottom: 0!important;
+    }
+    @media only screen and (max-width: 1024px) {
+        .about_slider {
+            height: 100vh!important;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+         .rotate-circle {
+             display: none;
+         }
+        .swiper-vertical > .swiper-pagination-bullets {
+      margin-right: 40px!important;
+      gap: 40px!important;
+        }
+        .swiper-slide div{
+         width: 228px!important;
+      padding: 12px!important;
+    }
+    .swiper-slide h2 {
+      font-size: 18px!important;
+     
+    }
+    .swiper-slide p {
+      margin-top: 8px!important;
+     
+    }
+    }
+  </style>
+  <body>
+    <div class="swiper about_slider">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide one">
+          <div>
+            <h2>Mercata Marketplace</h2>
+            <p>Launched Mercata Marketplace</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide two">
+          <div>
+            <h2>New Funding</h2>
+            <p>Announce $41M additional funding led by Liberty City Ventures</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide three">
+          <div>
+            <h2>Launch TraceCarbon</h2>
+            <p>CO2e ecosystem management application</p>
+          </div>
+
+          <div>
+            <h2>Blockchain for Energy</h2>
+            <p>Announced patnership with Blockchain For Energy</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide four">
+            <div>
+                <h2>Launch Harvest</h2>
+                <p>Agribusiness value chain traceability application</p>
+            </div>
+        </div>
+
+        <div class="swiper-slide five">
+          <div>
+            <h2>Enterprise POCs</h2>
+            <p>
+              Secured Series A Funding and expanded industry/vertical
+              capabilites
+            </p>
+          </div>
+          <div>
+            <h2>Major Project</h2>
+            <p>Announced major project with Bayer</p>
+          </div>
+        </div>
+
+        <div class="swiper-slide six">
+          <div>
+            <h2>All Major Cloud Providers</h2>
+            <p>
+              Launched STRATO on all major cloud providers by partnering with
+              Google & AWS
+            </p>
+          </div>
+          <div>
+            <h2>Major Initiative</h2>
+            <p>
+              Announced major initiative with ARC, United Airlines & Blockskye
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide seven">
+            <div>
+                <h2>Enterprise Ethereum Alliance</h2>
+                <p>Launched Enterprise Ethereum Alliance as founding board member</p>
+            </div>
+        </div>
+
+        <div class="swiper-slide eight">
+          <div>
+            <h2>First Capital Raise</h2>
+            <p>
+              BlockApps spins out of ConsenSys & completes first capital raisep>
+            </p>
+          </div>
+
+          <div>
+            <h2>First Production Application</h2>
+            <p>
+              Collaborated with ConsenSys and BHP Billiton to deploy the first
+              production application
+            </p>
+          </div>
+          <div>
+            <h2>Enterprise POCs</h2>
+            <p>
+              Built Enterprise POCs with John Hancock & Upgraded (now
+              Ticketmaster)
+            </p>
+          </div>
+        </div>
+
+        <div class="swiper-slide nine">
+          <div>
+            <h2>BlockApps Founded</h2>
+            <p>Kieren James-Lubin runs research arm of Ethereum CCRG</p>
+          </div>
+          <div>
+            <h2>Blockchain-As-A-Service</h2>
+            <p>Launched BaaS platform with Microsoft</p>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination">
+        <div class="line"></div>
+      </div>
+      <!--<div class="rotate-circle">-->
+      <!--  <img src="https://polygonverse.com/wp-content/uploads/2024/06/Group-24.png">-->
+      <!--</div>-->
+    </div>
+
+    <script>
+      var menu = [
+        "2023",
+        "2022",
+        "2021",
+        "2020",
+        "2019",
+        "2018",
+        "2017",
+        "2016",
+        "2015",
+      ];
+      const swiper = new Swiper(".swiper", {
+        direction: "vertical",
+
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return (
+              '<span class="' +
+              className +
+              '"><p class="slideNum">' +
+              menu[index] +
+              "</p></span>"
+            );
+          },
+        },
+        centeredSlides: true,
+        slidesPerView: "auto",
+        followFinger: true,
+        mousewheel: {
+          releaseOnEdges: true,
+        },
+      });
+
+      const rotateCircle = document.querySelector(".rotate-circle");
+      rotateCircle.style.animationPlayState = "paused"; // Initially pause the animation
+      const newswiper = document.querySelector(".swiper");
+
+      newswiper.addEventListener("wheel", function (event) {
+        rotateCircle.style.animationPlayState = "running";
+        clearTimeout(this._timeout);
+        this._timeout = setTimeout(function () {
+          rotateCircle.style.animationPlayState = "paused";
+        }, 200);
+      });
+      
+    </script>
+  </body>
+</html>
