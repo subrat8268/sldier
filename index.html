@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,26 +22,28 @@
       padding: 0;
     }
     .about_slider {
-        width: 100%; 
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row-reverse;
+      padding-top: 50px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column-reverse;
       /*width: 900px;*/
-      height: 100vh!important;
+      height: 100% !important;
       position: relative;
       font-family: "Inter", sans-serif;
     }
-    .about_slider .swiper-wrapper{
-        width: 65%!important;
+    .about_slider .swiper-wrapper {
+      margin-top: 50px;
+      width: 65% !important;
     }
-    .swiper-free-mode>.swiper-wrapper {
-    margin: 0!important;
+    .swiper-free-mode > .swiper-wrapper {
+      /* margin: 0 !important; */
     }
     .cal.swiper-pagination-bullets,
     .swiper-vertical > .swiper-pagination-bullets {
-        position: relative;
+      position: relative;
       background-color: #cbd5e1;
-      margin-right: 190px!important;
+      margin-right: 190px !important;
       width: 2px;
       height: fit-content;
       right: var(--swiper-pagination-right, auto);
@@ -54,20 +57,19 @@
       gap: 60px;
       z-index: 0;
     }
-    .swiper-slide{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 8px;
-        height: auto !important;
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 24px;
+      height: auto !important;
     }
     .swiper-slide div {
-        width: 400px;
+      width: 400px;
       padding: 24px;
       border-radius: 8px;
       background: #fff;
       border: 1px solid #e2e8f0;
-      margin: 24px 0;
       box-shadow: 0px 1px 2px 0px #0000000d;
       opacity: 30%;
     }
@@ -87,22 +89,35 @@
       border-radius: 8px;
       background: #fff;
       border: 1px solid #e2e8f0;
-      margin-bottom: 10px;
     }
-    .swiper-slide-active div{
+    .swiper-slide-active div {
       opacity: 1;
     }
     .swiper-slide-next {
-        top: 0!important;
+      top: 0 !important;
     }
     .swiper-vertical > .swiper-wrapper {
       align-items: center;
+    }
+    .swiper-pagination{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .line{
+      background-color: #cbd5e1;
+      height: 1px;
+      top: 11px;
+      width: auto;
+      position: absolute;
+      z-index: -1;
     }
     .swiper-pagination-bullet {
       width: 10px;
       height: 10px;
       position: relative;
-      margin: 0 !important;
+      margin: 0 40px !important;
       background-color: #cbd5e1;
       opacity: 1;
     }
@@ -111,13 +126,13 @@
     }
     .slideNum {
       position: absolute;
-      top: -5px;
-      left: -50px;
+      top: 35px;
+      left: -15px;
     }
     .swiper-pagination-bullet-active {
       font-weight: 600;
-      width: 15px!important;
-      height: 15px!important;
+      width: 15px !important;
+      height: 15px !important;
       border: 4px solid blue;
       background-color: white;
     }
@@ -139,38 +154,48 @@
         transform: rotate(360deg);
       }
     }
-    .about_slider .swiper-slide img{
-        display: none;
+
+    .rotate-circle[data-direction="anticlockwise"] {
+      animation-direction: reverse; /* anticlockwise */
     }
-    .about_slider p{
-        margin-bottom: 0!important;
+    .about_slider .swiper-slide img {
+      display: none;
+    }
+    .about_slider p {
+      margin-bottom: 0 !important;
     }
     @media only screen and (max-width: 1024px) {
-        .about_slider {
-            height: 100vh!important;
-        }
+      .about_slider {
+        height: 100vh !important;
+      }
+      /*.swiper-slide div {*/
+      /*    margin: -10px 0!important;*/
+      /*}*/
     }
     @media only screen and (max-width: 768px) {
-         .rotate-circle {
-             display: none;
-         }
-        .swiper-vertical > .swiper-pagination-bullets {
-      margin-right: 40px!important;
-      gap: 40px!important;
-        }
-        .swiper-slide div{
-         width: 228px!important;
-      padding: 12px!important;
+      .about_slider {
+        justify-content: space-between;
+      }
+      .rotate-circle {
+        display: none;
+      }
+      .swiper-vertical > .swiper-pagination-bullets {
+        margin-right: 40px !important;
+        gap: 40px !important;
+      }
+      .swiper-slide div {
+        width: 228px !important;
+        padding: 12px !important;
+      }
+      .swiper-slide h2 {
+        font-size: 18px !important;
+      }
+      .swiper-slide p {
+        margin-top: 8px !important;
+      }
     }
-    .swiper-slide h2 {
-      font-size: 18px!important;
-     
-    }
-    .swiper-slide p {
-      margin-top: 8px!important;
-     
-    }
-    }
+
+    
   </style>
   <body>
     <div class="swiper about_slider">
@@ -204,10 +229,10 @@
         </div>
 
         <div class="swiper-slide four">
-            <div>
-                <h2>Launch Harvest</h2>
-                <p>Agribusiness value chain traceability application</p>
-            </div>
+          <div>
+            <h2>Launch Harvest</h2>
+            <p>Agribusiness value chain traceability application</p>
+          </div>
         </div>
 
         <div class="swiper-slide five">
@@ -241,17 +266,19 @@
         </div>
 
         <div class="swiper-slide seven">
-            <div>
-                <h2>Enterprise Ethereum Alliance</h2>
-                <p>Launched Enterprise Ethereum Alliance as founding board member</p>
-            </div>
+          <div>
+            <h2>Enterprise Ethereum Alliance</h2>
+            <p>
+              Launched Enterprise Ethereum Alliance as founding board member
+            </p>
+          </div>
         </div>
 
         <div class="swiper-slide eight">
           <div>
             <h2>First Capital Raise</h2>
             <p>
-              BlockApps spins out of ConsenSys & completes first capital raisep>
+              BlockApps spins out of ConsenSys & completes first capital raise
             </p>
           </div>
 
@@ -284,7 +311,6 @@
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination">
-        <div class="line"></div>
       </div>
       <!--<div class="rotate-circle">-->
       <!--  <img src="https://polygonverse.com/wp-content/uploads/2024/06/Group-24.png">-->
@@ -303,42 +329,43 @@
         "2016",
         "2015",
       ];
-      const swiper = new Swiper(".swiper", {
-        direction: "vertical",
 
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function (index, className) {
-            return (
-              '<span class="' +
-              className +
-              '"><p class="slideNum">' +
-              menu[index] +
-              "</p></span>"
-            );
+      setTimeout(function () {
+        const swiper = new Swiper(".swiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+              return (
+                '<div class="line"></div><span class="' +
+                className +
+                '"><p class="slideNum">' +
+                menu[index] +
+                "</p></span>"
+              );
+            },
           },
-        },
-        centeredSlides: true,
-        slidesPerView: "auto",
-        followFinger: true,
-        mousewheel: {
-          releaseOnEdges: true,
-        },
-      });
+          centeredSlides: true,
+          //slidesPerView: "auto",
+          followFinger: true,
+          mousewheel: {
+            releaseOnEdges: true,
+          },
+        });
 
-      const rotateCircle = document.querySelector(".rotate-circle");
-      rotateCircle.style.animationPlayState = "paused"; // Initially pause the animation
-      const newswiper = document.querySelector(".swiper");
+        const rotateCircle = document.querySelector(".rotate-circle");
+        rotateCircle.style.animationPlayState = "paused"; // Initially pause the animation
+        const newswiper = document.querySelector(".swiper");
 
-      newswiper.addEventListener("wheel", function (event) {
-        rotateCircle.style.animationPlayState = "running";
-        clearTimeout(this._timeout);
-        this._timeout = setTimeout(function () {
-          rotateCircle.style.animationPlayState = "paused";
-        }, 200);
-      });
-      
+        newswiper.addEventListener("wheel", function (event) {
+          rotateCircle.style.animationPlayState = "running";
+
+          clearTimeout(this._timeout);
+          this._timeout = setTimeout(function () {
+            rotateCircle.style.animationPlayState = "paused";
+          }, 200);
+        });
+      }, 100);
     </script>
   </body>
 </html>
